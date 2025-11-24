@@ -19,16 +19,16 @@ sets the sound for various functions
 * Takes: absolute path to sound file e.g. ogg, mp3
 * e.g. `/usr/share/sounds/freedesktop/stereo/device-added.oga`
 
-  $SEND_USB_NOTIFICATION
-
-  determines if a notification is sent or not
-
-  * Type: String
-  * Takes: Bool `"true"/"false"`
- 
-  $USB_CONNECT_ICON, $USB_DISCONNECT_ICON
-
-  sets the icons for notifications
-
-  * Type: string
-  * Takes: absolute path to image file or icon
+$SEND_USB_NOTIFICATION
+  
+determines if a notification is sent or not
+  
+ * Type: String
+ * Takes: Bool `"true"/"false"`
+   
+$USB_CONNECT_ICON, $USB_DISCONNECT_ICON
+  
+sets the icons for notifications
+  
+* Type: string
+* Takes: absolute path to image file or icon
