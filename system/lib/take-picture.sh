@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Take a picture using grim and slurp
-/usr/bin/aplay $SCREENSHOT_SOUND &
+/usr/bin/paplay $SCREENSHOT_SOUND &
 
 filename=~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
 grim -g "$(slurp)" - | tee "$filename" | wl-copy
