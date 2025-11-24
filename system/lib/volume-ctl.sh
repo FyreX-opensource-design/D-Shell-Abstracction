@@ -2,8 +2,8 @@
 
 if [ "$1" == "add" ]; then
     wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-    /usr/bin/aplay $VOLUME_SOUND &
+    /usr/bin/paplay $VOLUME_SOUND &
 elif [ "$1" == "subtract" ]; then
     wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-    /usr/bin/aplay $VOLUME_SOUND &
+    /usr/bin/paplay $VOLUME_SOUND &
 fi
