@@ -12,7 +12,7 @@ Sets the theme for various programs.
 * e.g.: `/opt/system/themes/retro`
 * Notes: only takes up to the folder before applicaion config folder name. So */waybar/config and */waybar/style.css is coded into the script. i.e. the full path will be `$*_THEME/<application config>/<config files>`
 
-$ $USB_CONNECT_SOUND, USB_DISCONNECT_SOUND
+$ $USB_CONNECT_SOUND, USB_DISCONNECT_SOUND, $VOLUME_SOUND
 
 sets the sound for various functions
 * Type: string
