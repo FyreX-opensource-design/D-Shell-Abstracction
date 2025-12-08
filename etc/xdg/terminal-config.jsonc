@@ -1,0 +1,15 @@
+{
+  "terminal_emulators": [
+    "alacritty",
+    "kitty",
+    "foot",
+    "wezterm",
+    "gnome-terminal",
+    "konsole",
+    "xterm",
+    "urxvt",
+    "st",
+    "terminator"
+  ]
+}
+
