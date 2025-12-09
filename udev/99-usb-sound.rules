@@ -1,1 +1,2 @@
 ACTION=="add", SUBSYSTEM=="usb", RUN+="/opt/system/lib/play-usb-connect-sound.sh"
+ACTION=="remove", SUBSYSTEM=="usb", RUN+="/opt/system/lib/play-usb-disconnect-sound.sh"
