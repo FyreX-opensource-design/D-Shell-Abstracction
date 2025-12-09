@@ -12,14 +12,14 @@ Sets the theme for various programs.
 * e.g.: `/opt/system/themes/retro`
 * Notes: only takes up to the folder before applicaion config folder name. So */waybar/config and */waybar/style.css is coded into the script. i.e. the full path will be `$*_THEME/<application config>/<config files>`
 
-$ $USB_CONNECT_SOUND, USB_DISCONNECT_SOUND, $VOLUME_SOUND
+$ $USB_CONNECT_SOUND, USB_DISCONNECT_SOUND, $VOLUME_SOUND, $INFO_SOUND, $ERROR_SOUND
 
 sets the sound for various functions
 * Type: string
 * Takes: absolute path to sound file e.g. ogg, mp3
 * e.g. `/usr/share/sounds/freedesktop/stereo/device-added.oga`
 
-$SEND_USB_NOTIFICATION
+$SEND_USB_NOTIFICATION, $UNIVERSIAL_COPY_PASTE_NOTIFICATION
   
 determines if a notification is sent or not
   
@@ -27,8 +27,12 @@ determines if a notification is sent or not
  * Takes: Bool `"true"/"false"`
    
 $USB_CONNECT_ICON, $USB_DISCONNECT_ICON
-  
 sets the icons for notifications
   
 * Type: string
 * Takes: absolute path to image file or icon
+
+$UNIVERSIAL_COPY_PASTE
+enables or disables some features
+* Type: string
+* Takes: Bool `"true"/"false"`
