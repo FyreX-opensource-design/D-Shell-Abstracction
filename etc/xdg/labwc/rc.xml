@@ -63,4 +63,14 @@
       <command>/opt/lib/voice/STT_commands.sh</command>
     </action>
   </keybind>
+  <keybind key="f1">
+    <action name="Execute">
+      <command>$HELP_MENU</command>
+    </action>
+  </keybind>
+  <keybind key="W-f1">
+    <action name="Execute">
+      <command>$OS_HELP_MENU</command>
+    </action>
+  </keybind>
 </labwc_config>
