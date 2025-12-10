@@ -27,15 +27,18 @@ determines if a notification is sent or not
  * Takes: Bool `"true"/"false"`
    
 $USB_CONNECT_ICON, $USB_DISCONNECT_ICON
+
 sets the icons for notifications
   
 * Type: string
 * Takes: absolute path to image file or icon
 
 $UNIVERSIAL_COPY_PASTE, $STICKY_KEYS
+
 enables or disables some features
 * Type: string
 * Takes: Bool `"true"/"false"`
 
 _STICKY_KEYS_CTRL, _STICKY_KEYS_ALT, _STICKY_KEYS_SHIFT, _STICKY_KEYS_SUPER
+
 internal enviroment vars used as state machines, should not be used otherwise.
