@@ -39,6 +39,16 @@ enables or disables some features
 * Type: string
 * Takes: Bool `"true"/"false"`
 
+$VOSK_MODEL
+
+path to model for AI.
+* Type: string
+* Takes: absolute path to model
+
 _STICKY_KEYS_CTRL, _STICKY_KEYS_ALT, _STICKY_KEYS_SHIFT, _STICKY_KEYS_SUPER
 
 internal enviroment vars used as state machines, should not be used otherwise.
+
+# Credits
+* wofi-wifi-menu: https://github.com/fourstepper/wofi-wifi-menu/tree/master
+* nerd-dictation: https://github.com/ideasman42/nerd-dictation/tree/main
