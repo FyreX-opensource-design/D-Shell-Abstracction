@@ -1,2 +1,4 @@
 $INFO_SOUND=/opt/system/default/info-sound.wav
 $ERROR_SOUND=/opt/system/default/error-sound.wav
+$USB_CONNECT_SOUND/opt/system/default/usb-connecct-sound.wav
+$USB_DISCONNECT_SOUND=/opt/system/default/usb-disconnecct-sound.wav
