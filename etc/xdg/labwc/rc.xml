@@ -48,6 +48,11 @@
       <command>$TASK_MANAGER</command>
     </action>
   </keybind>
+  <keybind key="C-A-Delete">
+    <action name="Execute">
+      <command>$/opt/system/apps/ctrl-alt-delete.sh</command>
+    </action>
+  </keybind>
   <keybind key="W-C-v">
     <action name="Execute">
       <command>$VOLUME_MIXER</command>
