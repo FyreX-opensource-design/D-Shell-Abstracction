@@ -52,3 +52,4 @@ internal enviroment vars used as state machines, should not be used otherwise.
 # Credits
 * wofi-wifi-menu: https://github.com/fourstepper/wofi-wifi-menu/tree/master
 * nerd-dictation: https://github.com/ideasman42/nerd-dictation/tree/main
+* Default Sounds: https://freesound.org/
