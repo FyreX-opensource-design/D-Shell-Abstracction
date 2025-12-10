@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<labwc_config>
+  <!-- Brightness -->
+  <keybind key="XF86MonBrightnessUp">
+    <action name="Execute">
+      <command>brightnessctl set 5%+</command>
+    </action>
+  </keybind>
+  <keybind key="XF86MonBrightnessDown">
+    <action name="Execute">
+      <command>brightnessctl set 5%-</command>
+    </action>
+  </keybind>
+  <keybind key="C-c">
+    <action name="Execute">
+      <command>/opt/system/lib/copy-paste.sh copy</command>
+    </action>
+  </keybind>
+  <keybind key="C-v">
+    <action name="Execute">
+      <command>/opt/system/lib/copy-paste.sh paste</command>
+    </action>
+  <keybind key="A-F4">
+    <action name="Close" />
+  </keybind>
+  <keybind key="ctrl">
+    <action name="Execute">
+      <command>/opt/system/lib/sticky-keys.sh ctrl</command>
+    </action>
+  </keybind>
+  <keybind key="alt">
+    <action name="Execute">
+      <command>/opt/system/lib/sticky-keys.sh alt</command>
+    </action>
+  </keybind>
+  <keybind key="shift">
+    <action name="Execute">
+      <command>/opt/system/lib/sticky-keys.sh shift</command>
+    </action>
+  </keybind>
+  <keybind key="super">
+    <action name="Execute">
+      <command>/opt/system/lib/sticky-keys.sh super</command>
+    </action>
+  </keybind>
+</labwc_config>
