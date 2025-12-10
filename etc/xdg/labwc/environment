@@ -1,1 +1,2 @@
 $INFO_SOUND=/opt/system/default/info-sound.wav
+$ERROR_SOUND=/opt/system/default/error-sound.wav
