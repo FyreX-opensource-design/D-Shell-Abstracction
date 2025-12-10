@@ -43,4 +43,9 @@
       <command>/opt/system/lib/sticky-keys.sh super</command>
     </action>
   </keybind>
+  <keybind key="C-A-Delete">
+    <action name="Execute">
+      <command>/opt/system/lib/ctrl-alt-delete</command>
+    </action>
+  </keybind>
 </labwc_config>
