@@ -1,0 +1,12 @@
+[Unit]
+Description=Play USB Connect Sound
+After=sound.target
+
+[Service]
+Type=oneshot
+# Source environment file if it exists and has valid format
+EnvironmentFile=-/etc/xdg/labwc/environment
+# Also ensure DISPLAY is set for notifications
+Environment="DISPLAY=:0"
+ExecStart=/bin/bash -c 'source /etc/xdg/labwc/environment 2>/dev/null || true; /opt/system/lib/play-usb-connect-sound.sh'
+
