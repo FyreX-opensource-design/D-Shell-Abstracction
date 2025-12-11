@@ -1,6 +1,8 @@
 # D-Shell-Abstracction
 A Desktop shell abstraction layer using enviroment vars for customization
 
+Note: for some features, you need dotool installed and working on your system. you can test if it's working with `echo "type t | dotool"`
+
 # Variables
 
 $WAYBAR_THEME, WOFI_THEME
