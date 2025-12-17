@@ -12,7 +12,7 @@ mkdir -p "$(dirname "$LOCK_FILE")"
 ensure_dotoold() {
     if ! pgrep -x dotoold >/dev/null 2>&1; then
         dotoold >/dev/null 2>&1 &
-        sleep 0.1
+        sleep 0.15
     fi
 }
 
@@ -21,6 +21,9 @@ send_to_dotool() {
     ensure_dotoold
     echo "$1" | dotoolc 2>/dev/null
 }
+
+# Ensure daemon is ready before proceeding
+ensure_dotoold
 
 # Acquire lock using flock (file descriptor 200)
 exec 200>"$LOCK_FILE"
@@ -44,9 +47,16 @@ _STICKY_KEYS_SHIFT="${_STICKY_KEYS_SHIFT:-false}"
 _STICKY_KEYS_SUPER="${_STICKY_KEYS_SUPER:-false}"
 
 mode=$1
+trigger="${2:-release}"  # Default to "release" if not specified
+
 if [[ "$mode" != "ctrl" && "$mode" != "alt" && "$mode" != "shift" && "$mode" != "super" ]]; then
     echo "Invalid mode: $mode. Valid modes are: ctrl, alt, shift, and super."
     exit 1
+fi
+
+# We only handle release events now (press bindings removed to avoid consuming key events)
+if [ "$trigger" != "release" ]; then
+    exit 0
 fi
 
 # Function to save state to file
@@ -109,15 +119,43 @@ if [ "$STICKY_KEYS" = "true" ]; then
     notify-send "Sticky key $mode is $toggle" -u normal -i "$INFO_ICON" -t 2000
     paplay $INFO_SOUND
 else
+    # When sticky keys is disabled, simulate a normal key press on release
+    # This allows key mappings in rc.xml to work normally
+    # First ensure the key is released (in case it's stuck)
+    case "$mode" in
+        ctrl)
+            send_to_dotool "keyup leftctrl"
+            sleep 0.02
+            send_to_dotool "keydown leftctrl"
+            sleep 0.05
+            send_to_dotool "keyup leftctrl"
+            ;;
+        alt)
+            send_to_dotool "keyup leftalt"
+            sleep 0.02
+            send_to_dotool "keydown leftalt"
+            sleep 0.05
+            send_to_dotool "keyup leftalt"
+            ;;
+        shift)
+            send_to_dotool "keyup leftshift"
+            sleep 0.02
+            send_to_dotool "keydown leftshift"
+            sleep 0.05
+            send_to_dotool "keyup leftshift"
+            ;;
+        super)
+            send_to_dotool "keyup leftmeta"
+            sleep 0.02
+            send_to_dotool "keydown leftmeta"
+            sleep 0.05
+            send_to_dotool "keyup leftmeta"
+            ;;
+    esac
     # Reset all states when sticky keys is disabled
     _STICKY_KEYS_CTRL="false"
     _STICKY_KEYS_ALT="false"
     _STICKY_KEYS_SHIFT="false"
     _STICKY_KEYS_SUPER="false"
     save_state "$_STICKY_KEYS_CTRL" "$_STICKY_KEYS_ALT" "$_STICKY_KEYS_SHIFT" "$_STICKY_KEYS_SUPER"
-    # Release all keys
-    send_to_dotool "keyup leftctrl"
-    send_to_dotool "keyup leftalt"
-    send_to_dotool "keyup leftshift"
-    send_to_dotool "keyup leftmeta"
 fi
