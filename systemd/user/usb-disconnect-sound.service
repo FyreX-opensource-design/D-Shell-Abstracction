@@ -1,12 +1,18 @@
 [Unit]
 Description=Play USB Disconnect Sound
 After=sound.target
+After=graphical-session.target
+After=pipewire-pulse.service
+Wants=pipewire-pulse.service
 
 [Service]
 Type=oneshot
 # Source environment file if it exists and has valid format
 EnvironmentFile=-/etc/xdg/labwc/environment
-# Also ensure DISPLAY is set for notifications
+# Set runtime directory and D-Bus for user services
+Environment="XDG_RUNTIME_DIR=%t"
+Environment="PULSE_RUNTIME_PATH=%t/pulse"
+Environment="DBUS_SESSION_BUS_ADDRESS=unix:path=%t/bus"
 Environment="DISPLAY=:0"
-ExecStart=/bin/bash -c 'source /etc/xdg/labwc/environment 2>/dev/null || true; /opt/system/lib/play-usb-disconnect-sound.sh'
+ExecStart=/bin/bash -c 'source /etc/xdg/labwc/environment 2>/dev/null || true; export XDG_RUNTIME_DIR=%t PULSE_RUNTIME_PATH=%t/pulse DBUS_SESSION_BUS_ADDRESS=unix:path=%t/bus; /opt/system/lib/play-usb-disconnect-sound.sh'
 

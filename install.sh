@@ -19,9 +19,9 @@ sudo udevadm control --reload-rules
 # Install systemd user services
 if [ -d "./systemd/user" ]; then
     sudo mkdir -p /usr/lib/systemd/user
-    sudo cp ./systemd/user/*.service /usr/lib/systemd/user/
-    sudo systemctl daemon-reload
 fi
+sudo cp ./systemd/user/*.service /usr/lib/systemd/user/
+sudo systemctl daemon-reload
 
 cd /opt/system
 mkdir env
