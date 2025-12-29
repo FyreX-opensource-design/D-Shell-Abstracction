@@ -28,3 +28,5 @@ mkdir env
 cd ./env
 sudo python3 -m venv STT
 sudo ./STT/bin/pip3 install vosk
+sudo python3 -m venv bing-wallpaper
+sudo ./bing-wallpaper/bin/pip3 install pillow requests
